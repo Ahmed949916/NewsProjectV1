@@ -25,4 +25,14 @@ public class NewsService {
         return repo.findById(id).orElse(null);
     }
 
-}
+    public Boolean DeleteNewsById(Long id) {
+            if (repo.existsById(id)) {
+                repo.deleteById(id);
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+    }
+

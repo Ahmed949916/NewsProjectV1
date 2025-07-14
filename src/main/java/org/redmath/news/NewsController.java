@@ -22,6 +22,13 @@ public class NewsController {
     public News FindById(@PathVariable Long id){
         return service.findNewsById(id);
     }
+    @DeleteMapping("/{id}")
+    public Boolean DeleteNews(@PathVariable Long id){
+        return service.DeleteNewsById(id);
+    }
+
+
+
     @PostMapping
     public News create(@RequestBody News news){
         System.out.println(news);
